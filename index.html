@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Book-shop</title>
+</head>
+
+<body onload="onInit()">
+    <h1 data-trans="create-book-h1">Books</h1>
+    <div class="new-book" onclick="onAddBook()">
+        <input type="text" name="book" placeholder="What book do you wanna dd??" />
+        <input type="number" name="price" placeholder="Price" />
+        <p data-trans="create-book">
+            Create new book
+        </p>
+    </div>
+    <header>
+        <select onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
+    </header>
+    <table class="content">
+        <thead>
+            <tr>
+                <th data-trans="id" onclick="onSortBy()">Id</th>
+                <th data-trans="title" onclick="onSortBy(true)">Title</th>
+                <th data-trans="price" onclick="onSortBy()">Price</th>
+                <th data-trans="actions">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="add-books"></tbody>
+    </table>
+    <div class="pagination-container">
+        <button></button>
+    </div>
+    <div class="modal">
+        <h3></h3>
+        <h4>Book id: <span></span></h4>
+        <h5>Book Description:</h5>
+        <p></p>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+    <div class="user-msg"></div>
+    <script src="/js/services/utils.service.js"></script>
+    <script src="/js/services/i18n-service.js"></script>
+    <script src="/js/services/storage.service.js"></script>
+    <script src="/js/services/book.service.js"></script>
+    <script src="/js/book.controller.js"></script>
+</body>
+
+</html>
